@@ -115,10 +115,11 @@ public class Snake extends JPanel {
 
     public void cambiarDireccion(char dir) {
         boolean esCorrecta
-                = (direccion == 'R' || direccion == 'L' && dir == 'U' || dir == 'D')
-                || (direccion == 'U' || direccion == 'D' && dir == 'R' || dir == 'L');
+                = ((direccion == 'R' || direccion == 'L') && (dir == 'U' || dir == 'D'))
+                || ((direccion == 'U' || direccion == 'D') && (dir == 'R' || dir == 'L'));
         if (esCorrecta) {
             this.direccionSig = dir;
+            
         }
     }
 
