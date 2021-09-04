@@ -5,12 +5,13 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class Panel extends JPanel {
-
-    Color colorFondo = Color.gray;
-    int tamMax, tam, cant, res;
+	private static final long serialVersionUID = 1L;
+	Color colorFondo = Color.gray;
+    private int tam;
+    private int cant;
+    private int res;
 
     public Panel(int tamMax, int cant) {
-        this.tamMax = tamMax;
         this.cant = cant;
         this.tam = tamMax / cant;
         this.res = tamMax % cant;
