@@ -13,14 +13,17 @@ public class Runtime implements Runnable {
     }
 
     public void run() {
+    	try {
         while (true) {
             snake.avanzar();
             snake.repaint();
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                Logger.getLogger(Runtime.class.getName()).log(Level.SEVERE, null, e);
+            Thread.sleep(100);
             }
+        } catch (InterruptedException e) {
+            Logger.getLogger(Runtime.class.getName()).log(Level.SEVERE, null, e);
+            // Restore interrupted state...
+            Thread.currentThread().interrupt();
+            
         }
     }
 
